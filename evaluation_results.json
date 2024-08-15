@@ -1,0 +1,9 @@
+{
+    "Faithfulness": 0.5,
+    "Answer Relevance": 0.44721359549995787,
+    "Context Precision": 0.75,
+    "Context Relevancy": 1.0,
+    "Context Recall": 1.0,
+    "Answer Semantic Similarity": 0.7777777777777777,
+    "Answer Correctness": 0.6388888888888888
+}
