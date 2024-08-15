@@ -62,4 +62,3 @@ The Gradio UI integrates the document extraction, prompt design, and response ge
 
 This project demonstrates a comprehensive approach to building a RAG-based AI application. It covers the entire pipeline from document extraction to user interaction, including evaluation metrics for assessing the quality of generated responses. The modular design allows for easy modifications and improvements in each component of the system.
 
-Feel free to adjust the paths and filenames if necessary.
