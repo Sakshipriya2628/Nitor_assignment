@@ -20,7 +20,7 @@ for i, image in enumerate(images):
 # Text Extraction
 
 text = ""
-# Path to the Tesseract executable (change this if needed)
+# Path to the Tesseract executable 
 # pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 # Extract text from images
@@ -44,14 +44,14 @@ def chunk_text(text, chunk_size=1000, overlap=100):
 
 # Create Embeddings
 
-client = OpenAI()  # Make sure you've set your API key in the environment variable OPENAI_API_KEY
+client = OpenAI()  
 
 def create_embeddings(chunk_text):
     embeddings = []
     for chunk in chunk_text:
         response = client.embeddings.create(
             input=chunk,
-            model="text-embedding-3-small"  # Using the latest model as of my last update
+            model="text-embedding-3-small"  
         )
         embedding = response.data[0].embedding
         embeddings.append({
