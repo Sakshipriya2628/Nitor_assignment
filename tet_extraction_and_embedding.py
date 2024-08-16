@@ -46,9 +46,9 @@ from openai import OpenAI
 
 client = OpenAI()  # Make sure you've set your API key in the environment variable OPENAI_API_KEY
 
-def create_embeddings(text_chunks):
+def create_embeddings(chunk_text):
     embeddings = []
-    for chunk in text_chunks:
+    for chunk in chunk_text:
         response = client.embeddings.create(
             input=chunk,
             model="text-embedding-3-small"  # Using the latest model as of my last update
@@ -71,7 +71,7 @@ pc = Pinecone(api_key = pinecone_api_key)
 index = pc.Index("projecty")
 
 vectors = []
-for i, (chunk, embedding) in enumerate(zip(text_chunks, embeddings)):
+for i, (chunk, embedding) in enumerate(zip(chunk_text, embeddings)):
     vector = {
         "id": f"vec{i + 1}",  # Generate unique ID for each vector
         "values": embedding,
