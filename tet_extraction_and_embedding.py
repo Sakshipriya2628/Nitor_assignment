@@ -2,6 +2,8 @@ from pdf2image import convert_from_path
 from PIL import Image
 import pytesseract
 import textwrap
+from openai import OpenAI
+import os
 
 # Path to the PDF file
 pdf_path = '/Users/sakshi_admin/Documents/Data Science Projects/diabetes-mellitus.pdf'
@@ -42,8 +44,6 @@ def chunk_text(text, chunk_size=1000, overlap=100):
 
 # Create Embeddings
 
-from openai import OpenAI
-
 client = OpenAI()  # Make sure you've set your API key in the environment variable OPENAI_API_KEY
 
 def create_embeddings(chunk_text):
@@ -67,7 +67,7 @@ embeddings = create_embeddings(chunk)
 
 from pinecone import Pinecone
 
-pc = Pinecone(api_key = pinecone_api_key)
+pc = Pinecone(api_key = os.getenv("pinecone_api_key"))
 index = pc.Index("projecty")
 
 vectors = []
