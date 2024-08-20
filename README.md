@@ -1,4 +1,4 @@
-# nitor_project
+# Nitor_project
 # RAG-Based AI Application
 
 ## Overview
